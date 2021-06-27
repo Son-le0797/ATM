@@ -21,21 +21,16 @@ public class Main {
 
 
         List<Exchangement> exchangements = new ArrayList<>();
-        exchangements.add(new Exchangement("rut tien", 100000));
+
         String line = null;
+
+
+        System.out.println("Ngan hang ABC kinh chao Quy khach Nguyen Van A");
+        System.out.println("Menu:");
 
         int choice = -1;
         while (choice != 0) {
 
-
-            for (int i = exchangements.size() - 1; i >= 0 && i >= exchangements.size() - 4; i--) {
-//                    for(Exchangement exchangement : exchangements){
-                line = String.format("%d. %s %d vnd", i, exchangements.get(i).getExchangementName(), exchangements.get(i).getAmount());
-//                        line = exchangement.getExchangementName() + "," + exchangement.getAmount();
-                CustomerData.writefile(PATH, line);
-
-                System.out.println("Ngan hang ABC kinh chao Quy khach Nguyen Van A");
-                System.out.println("Menu:");
 
                 System.out.println("\n\t1. Nhan phim A de kiem tra tai khoan");
                 System.out.println("\t2. Nhan phim D de nap tien");
@@ -90,8 +85,10 @@ public class Main {
 
                         break;
                     case 'H':
-                        List<String> listLine = ExchangementData.readFile(PATH);
-                        System.out.println(listLine);
+                        for(int i = exchangements.size() - 1, j = 1; i > exchangements.size() - 4 && i >= 0; i--, j++) {
+                            System.out.printf("%d. %s: %d vnd",j,exchangements.get(i).getExchangementName(),exchangements.get(i).getAmount());
+                        }
+
                         break;
                     case 'X':
                         System.out.print("Cam on ban da su dung cac dich vu ATM");
@@ -105,4 +102,4 @@ public class Main {
             }
         }
     }
-}
+
