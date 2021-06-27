@@ -86,7 +86,7 @@ public class Main {
                         break;
                     case 'H':
                         for(int i = exchangements.size() - 1, j = 1; i > exchangements.size() - 4 && i >= 0; i--, j++) {
-                            System.out.printf("%d. %s: %d vnd",j,exchangements.get(i).getExchangementName(),exchangements.get(i).getAmount());
+                            System.out.printf("\n%d. %s: %d vnd",j,exchangements.get(i).getExchangementName(),exchangements.get(i).getAmount());
                         }
 
                         break;
